@@ -22,6 +22,7 @@ wnce2001)
 	set_wifi_led "$boardname:green:wlan"
 	;;
 br-6475nd|\
+f9k1103v1|\
 mzk-w300nh2)
 	set_wifi_led "$boardname:amber:wlan"
 	;;
