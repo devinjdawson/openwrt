@@ -41,19 +41,6 @@ endef
 TARGET_DEVICES += dir-645
 
 
-define Device/f9k1103v1
-  DTS := F9K1103V1
-  BLOCKSIZE := 64k
-  IMAGE/sysupgrade.bin := append-kernel | append-rootfs | \
-	edimax-header -s CSYS -m RN54 -f 0x70000 -S 0x01100000 | pad-rootfs | \
-	append-metadata
-  DEVICE_TITLE := Belkin F9K1103v1
-  DEVICE_PACKAGES := kmod-usb-core kmod-usb2 kmod-usb3 kmod-usb-ledtrig-usbport \
-		swconfig
-endef
-TARGET_DEVICES += f9k1103v1
-
-
 define Device/hpm
   DTS := HPM
   BLOCKSIZE := 64k

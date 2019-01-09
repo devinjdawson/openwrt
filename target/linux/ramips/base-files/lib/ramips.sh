@@ -193,9 +193,6 @@ ramips_board_detect() {
 	*"F7C027")
 		name="f7c027"
 		;;
-	*"F9K1103v1")
-		name="f9k1103v1"
-		;;
 	*"FireWRT")
 		name="firewrt"
 		;;
