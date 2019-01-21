@@ -4,6 +4,9 @@
 define Build/mkrtn56uimg
 	$(STAGING_DIR_HOST)/bin/mkrtn56uimg $(1) $@
 endef
+define Build/mkf9k1103img
+	$(STAGING_DIR_HOST)/bin/mkf9k1103img $(1) $@
+endef
 
 define Device/br-6475nd
   DTS := BR-6475ND
@@ -39,6 +42,16 @@ define Device/dir-645
   DEVICE_PACKAGES := kmod-usb-core kmod-usb-ohci kmod-usb2 swconfig
 endef
 TARGET_DEVICES += dir-645
+
+
+define Device/f9k1103
+  DTS := F9K1103V1
+  BLOCKSIZE := 64k
+  IMAGE/sysupgrade.bin += | mkf9k1103img -s
+  DEVICE_TITLE := Belkin F9K1103
+  DEVICE_PACKAGES := kmod-usb-core kmod-usb-ohci kmod-usb2 swconfig
+endef
+TARGET_DEVICES += f9k1103
 
 
 define Device/f9k1103v1
